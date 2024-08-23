@@ -1,12 +1,12 @@
 .hero-sec{
     width: auto;
-    height: 420px;
+    height: 400px;
     background-color: #CCCCCC;
 }
 #image{
     width: 310px;
     height: 389px;
-    padding-top: 10%;
+    padding-top: 4%;
 
 }
 .text{
