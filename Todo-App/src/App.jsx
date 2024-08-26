@@ -1,14 +1,35 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Button from './component/Button';
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [todo, setTodo] = useState("");
+  const [todos, setTodos] = useState([
+   
+  ]);
+
+  const addTodo = () => {
+    setTodos([...todos, todo]);
+  };
 
   return (
     <div>
-      <h1>Syed Zohaib Ali Kazmi</h1>
+      <h1 className='heading'>Work</h1>
+      <input
+          className="Inp"
+          value={todo}
+          placeholder="Add Task"
+          onChange={(e) => setTodo(e.target.value)}
+        />
+        <Button  text={"Add"} onClick={addTodo} />
+        {todos.map((data, ind) => (
+          <h2 className='myH2' key={ind}>
+            {data}
+            
+          </h2>
+        ))}
+  
     </div>
   )
 }

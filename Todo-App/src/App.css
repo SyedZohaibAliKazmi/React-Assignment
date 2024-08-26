@@ -1,42 +1,56 @@
+*{
+  margin: 0%;
+  padding: 0%;
+}
+
+
+body{
+  background-color: rgb(0, 138, 138);
+}
 #root {
-  max-width: 1280px;
+  width: 250px;
+  min-height: 300px;
+  background-color:#00c4c4 ;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 10px 20px;
   text-align: center;
+  border-radius: 20px;
+}
+.heading{
+  font-size:36px;
+  margin-bottom: 10px;
+  background-color: #005f5f;
+  border-radius: 50px;
+  color: #00c4c4;
+  padding: 4px 4px;
+  
+}
+.Inp{
+    
+    width: 50%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid #005f5f;
+    border-radius: 40px;
+    font-size: 16px;
+    margin-right: 10px;
+    color: rgb(0, 95, 95) ;
+    padding: 5px 5px 5px 27px;
+
+}
+ ::placeholder{
+      color: #005f5f;
+      font-weight: 600;
+
+
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.myH2{
+  font-size: 30px;
+  text-transform: capitalize;
+  background-color: #b5fdfda9;
+  border-radius: 40px;
+  margin:6px 6px;
 }
