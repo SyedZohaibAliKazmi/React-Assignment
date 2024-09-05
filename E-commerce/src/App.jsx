@@ -1,17 +1,29 @@
 import { useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Category from "./pages/Category";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import { BrowserRouter, Routes , Route } from "react-router-dom";
+import NotFound from "./Pages/NotFound";
 
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
-  <div>
+    <BrowserRouter>
+  
    <Navbar/>
-    <h1>Zohaib Ali</h1>
-    
-  </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/Home" element={<Home />} />
+      <Route path="/Category" element={<Category />} />
+      <Route path="/About" element={<About />} />
+      <Route path="/Contact" element={<Contact />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </BrowserRouter>
   )
 }
 

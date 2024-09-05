@@ -1,13 +1,12 @@
-import './Button.css'
 
-function Button({ text, onClick }) {
 
-  return (
-    <button
-      onClick={onClick}>
-      {text }
-    </button>
-  );
-}
+function About() {
 
-export default Button;
+    return(
+      <div>
+        <h1>Welcome to About Page </h1>
+      </div>
+    )
+    
+  }
+  export default About

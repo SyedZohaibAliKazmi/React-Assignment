@@ -1,13 +1,13 @@
-import './Button.css'
 
-function Button({ text, onClick }) {
 
-  return (
-    <button
-      onClick={onClick}>
-      {text }
-    </button>
-  );
-}
 
-export default Button;
+function Category() {
+
+    return(
+      <div>
+        <h1>Welcome to Category Page </h1>
+      </div>
+    )
+    
+  }
+  export default Category
