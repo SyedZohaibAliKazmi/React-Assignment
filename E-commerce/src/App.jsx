@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import { BrowserRouter, Routes , Route } from "react-router-dom";
 import NotFound from "./Pages/NotFound";
+import Product from "./Pages/ProductDetail";
 import Footer from "./components/Footer";
 
 
@@ -20,6 +21,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/Home" element={<Home />} />
       <Route path="/Category" element={<Category />} />
+      <Route path="/Product/:id" element={<Product />} />
       <Route path="/About" element={<About />} />
       <Route path="/Contact" element={<Contact />} />
       <Route path="*" element={<NotFound />} />
