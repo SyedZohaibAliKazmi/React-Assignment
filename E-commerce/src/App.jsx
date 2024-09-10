@@ -1,6 +1,9 @@
 import { useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
+// import Home from "./pages/Home";
+import SignUp from "./Pages/Auth/SignUp";
+import Login from "./Pages/Auth/Login";
 import Home from "./pages/Home";
 import Category from "./pages/Category";
 import About from "./pages/About";
@@ -20,6 +23,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/Home" element={<Home />} />
+      <Route path="/SignUp" element={<SignUp />} />
+      <Route path="/Login" element={<Login />} />
       <Route path="/Category" element={<Category />} />
       <Route path="/Product/:id" element={<Product />} />
       <Route path="/About" element={<About />} />
