@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import Swal from "sweetalert2";
 import "./SignUp.css"
 import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword} from "firebase/auth";
@@ -17,13 +18,23 @@ function Hello() {
         try {
           setisSubmitting(true)
          const user = await createUserWithEmailAndPassword(auth,email,password)
-          console.log(  "user:", user)
-          alert(`Welcome ${email}`)
+         Swal.fire({
+          title: "Congragulation",
+          text:  `${user.user.email}Successfully signIn`,
+          icon: "success",
+          confirmButtonText: "Ok",
+         })
           navigate("/");
-        } catch (err) {
-          alert (err.message)
 
-        navigate("/Login")
+        } catch (err) {
+          setisSubmitting(true)
+          Swal.fire({
+            title: "Failed!",
+            text: `${err.message}`,
+            icon: "error",
+            confirmButtonText: "Try Again",
+          });
+        // navigate("/Login")
 
         }}
     
@@ -33,7 +44,7 @@ function Hello() {
         <div className="starry-world">
       <h1>Sign Up</h1>
       
-        <input type="text" placeholder="username" id="name" required />
+        <input type="text" placeholder="username" required />
         <input type="email" placeholder="email" value={email} required onChange={(e) => setEmail(e.target.value)}/>
         <input type="password" placeholder="password" value={password} required onChange={(e)=> setPassword(e.target.value)} />
         <button  onClick={handleSignIn} disabled={isSubmitting}>Submit</button>

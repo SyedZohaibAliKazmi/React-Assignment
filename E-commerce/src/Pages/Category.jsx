@@ -10,7 +10,6 @@ function UseEffect() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    console.log("Use Effect Chal gya");
     getProducts();
   }, []);
 
@@ -18,7 +17,6 @@ function UseEffect() {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((res) => {
-        console.log("res->", res);
         setProducts(res);
       });
   };
@@ -27,7 +25,6 @@ function UseEffect() {
     (data) => data.title.toLowerCase().indexOf(search) !== -1
   );
 
-  console.log("Component Chal gya", search);
   return (
     <div>
       <input style={{width:"200px", height:"30px", margin:"10px 10px",backgroundColor:"#CCCCCC" ,color:"black", borderRadius:"5px",padding:"2px 6px"}}

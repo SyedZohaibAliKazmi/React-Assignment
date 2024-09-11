@@ -15,7 +15,8 @@ function Navbar() {
 
 
     return(
-        <div id='main'>
+        
+        <div id='main1'>
             <img src={logo} alt="" />
             <ul>
                 <li><Link to ="Home">Home</Link></li>

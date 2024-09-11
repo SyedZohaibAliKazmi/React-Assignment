@@ -3,7 +3,7 @@
     padding: 0%;
 }
 
-#main{
+#main1{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,13 +14,13 @@
     padding-left: 20px;
     padding-right: 30px;
 }
-#main img{
+#main1 img{
     width: 70px;
     height: 70px;
     display: flex;
     align-items: center;
 }
-#main ul li {
+#main1 ul li {
     font-family: "poppins";
     font-size: 18px;
     
@@ -29,17 +29,17 @@
     padding: 8px;
 
 }
-#main a{
+#main1 a{
     text-decoration: none;
     color: #CCCCCC;
     position:relative ;
     padding: 0 8px;
 }
-#main a:hover{
+#main1 a:hover{
     font-weight: 600;
     transition: ease-in-out;
 }
-#main a::after{
+#main1 a::after{
 content: "";
 position: absolute;
 background-color: #CCCCCC;
@@ -52,11 +52,11 @@ transition: 0.3s;
 
 }
 
-#main a:hover::after{
+#main1 a:hover::after{
     width: 100%;
     
 }
-#main button{
+#main1 button{
     
         width: 100px;
         height: 40px;

@@ -6,12 +6,13 @@ import SignUp from "./Pages/Auth/SignUp";
 import Login from "./Pages/Auth/Login";
 import Home from "./pages/Home";
 import Category from "./pages/Category";
-import About from "./pages/About";
+import About from "./Pages/About";
 import Contact from "./pages/Contact";
 import { BrowserRouter, Routes , Route } from "react-router-dom";
 import NotFound from "./Pages/NotFound";
 import Product from "./Pages/ProductDetail";
 import Footer from "./components/Footer";
+import Account from "./components/Account";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
     <BrowserRouter>
   
    <Navbar/>
+   <Account/>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/Home" element={<Home />} />

@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom"
-
+import Swal from "sweetalert2"
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../../utilis/firebase"
 import { useNavigate } from "react-router-dom"
@@ -18,13 +18,22 @@ function Login() {
     try {
       setIsSubmitting(true)
      const user = await signInWithEmailAndPassword(auth,email,password)
-     console.log("user" ,user);
-     alert(`Welcome Back to ${user.user.email}`)
+    Swal.fire({
+      title: 'Login Successful',
+      text: `Welcome Back ${user.user.email}`,
+      icon: 'success',
+      confirmButtonText: 'Continue'
+    })
       navigate("/")
       
     } catch (error) {
-      alert(error.message)
-      navigate ("/signup")
+     Swal.fire({
+      title: 'Error',
+      text: error.message,
+      icon: 'error',
+      confirmButtonText: 'Try Again'
+     })
+      // navigate ("/signup")
     }
     
     
