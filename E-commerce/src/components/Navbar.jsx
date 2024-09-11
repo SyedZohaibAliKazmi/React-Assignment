@@ -22,7 +22,7 @@ function Navbar() {
                 <li><Link to ="Category">Category</Link></li>
                 <li><Link to ="About">About</Link></li>
                 <li><Link to ="Contact">Contact</Link></li>
-                <li><Link>User</Link></li>
+                {/* <li><Link>User</Link></li> */}
                <Button text= "Account" onClick={handlebutton}/>
             </ul>
         </div>
