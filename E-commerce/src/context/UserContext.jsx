@@ -23,7 +23,7 @@ function UserContextProvider({ children }) {
           isLogin: false,
           email: "",
         });
-        console.log("User Login nahn he");
+        console.log("User is logout");
       }
     });
 

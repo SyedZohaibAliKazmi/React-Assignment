@@ -1,11 +1,14 @@
 import './Button.css'
+import gif from './image/loading.gif'
 
-function Button({ text, onClick }) {
+
+function Button({ text, onClick , isloading}) {
 
   return (
     <button
       onClick={onClick}>
-      {text }
+      {/* {text } */}
+      {isloading ?<img src={gif}/> : text}
     </button>
   );
 }

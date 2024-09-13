@@ -5,11 +5,13 @@ import { signInWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../../utilis/firebase"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
+import Button from "../../components/button"
 
 function Login() {
     
   const navigate = useNavigate()
   const [email , setEmail] = useState("")
+  const [loading , setloading] = useState("")
   const [password , setPassword] = useState("")
   const [isSubmitting ,setIsSubmitting] = useState("")
 
@@ -17,6 +19,7 @@ function Login() {
 
     try {
       setIsSubmitting(true)
+      setloading(true)  
      const user = await signInWithEmailAndPassword(auth,email,password)
     Swal.fire({
       title: 'Login Successful',
@@ -25,6 +28,7 @@ function Login() {
       confirmButtonText: 'Continue'
     })
       navigate("/")
+      setloading(false)
       
     } catch (error) {
      Swal.fire({
@@ -33,6 +37,7 @@ function Login() {
       icon: 'error',
       confirmButtonText: 'Try Again'
      })
+     setloading(false)
       // navigate ("/signup")
     }
     
@@ -46,9 +51,10 @@ function Login() {
         <h1>Login</h1>
   
         
-          <input type="email" placeholder="email" value={email} onChange={(e)=> setEmail(e.target.value)} />
-          <input type="password" placeholder="password" value={password} onChange={(e)=> setPassword(e.target.value)} />
-          <button onClick={handlelogin} disabled={isSubmitting}>Submit</button>
+          <input type="email" placeholder="email" value={email} required onChange={(e)=> setEmail(e.target.value)}  />
+          <input type="password" placeholder="password" value={password} required onChange={(e)=> setPassword(e.target.value)}  />
+          {/* <button onClick={handlelogin} disabled={isSubmitting} >Submit</button> */}
+          <Button onClick={handlelogin} disabled={isSubmitting} isloading={loading} text={"Submit"} />
 
   
         <p>or &nbsp;<Link to="/SignUp">SignUp</Link></p>
