@@ -1,26 +1,31 @@
 
-import Button from './button'
+import Button from './Button'
 import logo from './image/logo.png'
 import { Link, useNavigate } from "react-router-dom";
 import './Nav.css'
 import { signOut } from 'firebase/auth';
 import { auth } from "../utilis/firebase"
+import { useContext, useState } from 'react';
+import{UserContext } from '../context/UserContext'
 function Navbar() {
-    
+//  const [isSubmitting,setisSubmitting]= useState("")
+
+// const {user}=useContext(UserContext)
+// console.log("user:", user)
+
+
     const navigate = useNavigate()
 
     function handlebutton() {
+    
 
         navigate("/signup")
         
     }
 
     async function handlelogout() {
-
-    const logout =  await signOut(auth)
-    console.log("logout hogaya");
     
-      navigate("/")
+  await signOut(auth)
         
     }
 
@@ -35,6 +40,7 @@ function Navbar() {
                 <li><Link to ="About">About</Link></li>
                 <li><Link to ="Contact">Contact</Link></li>
                 {/* <li><Link>User</Link></li> */}
+                
                 <Button text = {"Logout"} onClick={handlelogout} /> 
                <Button text= {"Account"} onClick={handlebutton}/>
             </ul>

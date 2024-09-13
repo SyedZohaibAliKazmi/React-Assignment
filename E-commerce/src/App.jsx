@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Category from "./pages/Category";
 import About from "./Pages/About";
 import Contact from "./pages/Contact";
+import Profile from "./Pages/Profile"
 import { BrowserRouter, Routes , Route } from "react-router-dom";
 import NotFound from "./Pages/NotFound";
 import Product from "./Pages/ProductDetail";
@@ -25,6 +26,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/Home" element={<Home />} />
+      <Route path="/Profile" element={<Profile />} />
       <Route path="/SignUp" element={<SignUp />} />
       <Route path="/Login" element={<Login />} />
       <Route path="/Category" element={<Category />} />

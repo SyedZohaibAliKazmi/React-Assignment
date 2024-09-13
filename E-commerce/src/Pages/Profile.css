@@ -1,0 +1,86 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+
+.display-div{
+    display: flex;
+    /* justify-content: center; */
+    width: auto;
+    height: 60vh;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px 10px;
+    gap: 6px;  
+    /* margin-bottom: 50px;   */
+}
+
+
+#btn{
+    width: 140px;
+}
+
+.picture1 img{
+
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* display: block;
+  margin-left: auto;
+  margin-right: auto; */
+    border: 2px solid #3a3a3a;
+}
+.display-div h2{
+    text-transform: capitalize;
+
+}
+.display-div h5{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.getDataUser{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0px 20px;
+}
+.getDataUser input ,textarea{
+    width: 200px;
+    padding-left: 14px;
+    border-radius: 30px;
+}
+.getDataUser label{
+    width: 80px;
+    height: 80px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: #dadada;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.getDataUser.lable-Img{
+    width: 80px;
+    height: 80px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: #dadada;
+    cursor: pointer;
+}
+.getDataUser .hidden{
+    display: none;
+}
+.getDataUser.upload-text {
+    color: #555;
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }

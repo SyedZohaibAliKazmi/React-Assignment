@@ -4,8 +4,10 @@ import Swal from "sweetalert2";
 import "./SignUp.css"
 import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword} from "firebase/auth";
-import {auth} from "../../utilis/firebase"
-import Button from "../../components/button";
+import {auth,db} from "../../utilis/firebase"
+import Button from "../../components/Button";
+// import { auth, db } from "../../utils/firebase";
+import { doc, setDoc } from "firebase/firestore";
 
 function Hello() {
    
@@ -14,6 +16,7 @@ function Hello() {
     const [password, setPassword] = useState("")
     const [loading, setloading] = useState("")
     const [isSubmitting , setisSubmitting ]=useState("")
+    const [username, setUsername] = useState("");
 
 
     const handleSignIn = async () => {
@@ -21,12 +24,20 @@ function Hello() {
           setisSubmitting(true)
           setloading(true)
          const user = await createUserWithEmailAndPassword(auth,email,password)
+
          Swal.fire({
           title: "Congragulation",
           text:  `${user.user.email}Successfully signIn`,
           icon: "success",
           confirmButtonText: "Ok",
          })
+         const docRef = doc(db, "users", user.user.uid);
+         const documentAdded = setDoc(docRef, {
+           username,
+           email,
+           uid: user.user.uid,
+         });
+         console.log("user==>", "document add hogya he", user.user.uid);
           navigate("/");
           setloading(false)
 
@@ -50,7 +61,7 @@ function Hello() {
         <div className="starry-world">
       <h1>Sign Up</h1>
       
-        <input type="text" placeholder="username" required />
+        <input type="text" placeholder="username" value={username} required onChange={(e) => setUsername(e.target.value)} />
         <input type="email" placeholder="email" value={email} required onChange={(e) => setEmail(e.target.value)}/>
         <input type="password" placeholder="password" value={password} required onChange={(e)=> setPassword(e.target.value)} />
         {/* <button  onClick={handleSignIn} disabled={isSubmitting}>Submit</button> */}
