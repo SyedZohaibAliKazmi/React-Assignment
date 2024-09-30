@@ -18,12 +18,17 @@ function UseEffect() {
       .then((res) => res.json())
       .then((res) => {
         setProducts(res);
+      
       });
   };
 
   const searched = products?.filter(
     (data) => data.title.toLowerCase().indexOf(search) !== -1
+
+    
   );
+  console.log(searched);
+  
 
   return (
     <div>
